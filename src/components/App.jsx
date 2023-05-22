@@ -32,13 +32,13 @@ export  function App() {
         setError(error);
       });
   };
-  const fetchImagesCallback = useCallback(fetchImages, []);
+  const fetchImagesCallback = useCallback(fetchImages, [page, perPage, searchQuery]);
   useEffect(() => {
     if (searchQuery === '') {
       return;
     }
 
-    fetchImages();
+    fetchImagesCallback();
   }, [searchQuery, page, perPage, fetchImagesCallback]);
 
   const handleSubmit = searchValue => {
