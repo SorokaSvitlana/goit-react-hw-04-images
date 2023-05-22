@@ -7,11 +7,11 @@ import Loader from './Loader/Loader';
 export  function App() {
   const [hits, setHits] = useState([]);
   const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(12);
+  const [perPage, ] = useState(12);
   const [totalHits, setTotalHits] = useState(0);
   const [searchQuery, setSearchQuery] = useState('');
   const [status, setStatus] = useState('idle');
-  const [ error, setError] = useState(null);
+  const [, setError] = useState(null);
   
 
   const fetchImages = () => {
