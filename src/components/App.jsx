@@ -12,6 +12,7 @@ export  function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [status, setStatus] = useState('idle');
   const [ error, setError] = useState(null);
+  
 
   const fetchImages = () => {
     setStatus('pending');
