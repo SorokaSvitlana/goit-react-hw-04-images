@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react';
+import React, {  useCallback, useEffect, useState } from 'react';
 import ImageGallery from 'components/ImageGallery/ImageGallery';
 import SearchBar from 'components/Searchbar/Searchbar';
 import LoadMoreBtn from './Button/Button';
@@ -32,14 +32,14 @@ export  function App() {
         setError(error);
       });
   };
-
+  const fetchImagesCallback = useCallback(fetchImages, []);
   useEffect(() => {
     if (searchQuery === '') {
       return;
     }
 
     fetchImages();
-  }, [searchQuery, page, perPage]);
+  }, [searchQuery, page, perPage, fetchImagesCallback]);
 
   const handleSubmit = searchValue => {
     setSearchQuery(searchValue);
